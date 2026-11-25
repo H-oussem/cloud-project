@@ -1,0 +1,10 @@
+# ContainerLab - Backend API Unoptimized Baseline (For T02 Benchmark)
+# Demonstrates single-stage build, running as root, unpruned devDependencies and npm cache
+FROM node:24-alpine
+
+WORKDIR /app
+COPY . .
+RUN npm install
+
+EXPOSE 5000
+CMD ["node", "src/server.js"]

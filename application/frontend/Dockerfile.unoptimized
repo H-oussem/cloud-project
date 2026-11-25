@@ -1,0 +1,11 @@
+# ContainerLab - Frontend Unoptimized Baseline (For T02 Benchmark)
+# Demonstrates running a full Node.js runtime and build toolchain in production instead of lightweight Nginx web server
+FROM node:24-alpine
+
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN npm run build
+
+EXPOSE 80
+CMD ["npx", "vite", "preview", "--host", "0.0.0.0", "--port", "80"]

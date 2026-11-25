@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: containerlab
+  labels:
+    app.kubernetes.io/name: containerlab
+    app.kubernetes.io/part-of: cloud-project
